@@ -39,14 +39,14 @@ namespace MVC_test_app
             UserManager<ApplicationUser> userManager)
         {
             var testAdmin = await userManager.Users
-                .Where(x => x.UserName == "admin2@todo.local")
+                .Where(x => x.UserName == "admin@todo.local")
                 .SingleOrDefaultAsync();
 
            if (testAdmin != null) return;
             testAdmin = new ApplicationUser
             {
-                UserName = "admin2@todo.local",
-                Email = "admin2@todo.local"
+                UserName = "admin@todo.local",
+                Email = "admin@todo.local"
             };
             await userManager.CreateAsync(
                 testAdmin, "NotSecure123!!");

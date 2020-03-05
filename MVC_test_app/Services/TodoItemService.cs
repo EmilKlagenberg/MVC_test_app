@@ -31,9 +31,10 @@ namespace MVC_test_app.Services
             newItem.UserId = user.Id;
             newItem.Id = Guid.NewGuid();
             newItem.IsDone = false;
-            //newItem.DueAt = DateTimeOffset.Now.AddDays(3);
+            //newItem.DueAt = DateTimeOffset.Now.AddDays(1);
 
             _context.Items.Add(newItem);
+
             var saveResult = await _context.SaveChangesAsync();
             return saveResult == 1;
         }

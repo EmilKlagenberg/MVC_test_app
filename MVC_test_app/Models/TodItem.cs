@@ -14,5 +14,13 @@ namespace MVC_test_app.Models
         [Required]
         public string Title { get; set; }
         public DateTimeOffset? DueAt { get; set; }
+
+        public TodoItem()
+        {
+            if(DueAt == null)
+            {
+                DueAt = DateTimeOffset.Now.AddDays(1);
+            }
+        }
     }
 }

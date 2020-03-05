@@ -60,7 +60,7 @@ namespace MVC_test_app
             app.UseStaticFiles();
 
             app.UseRouting();
-            
+
             app.UseAuthentication();
             app.UseAuthorization();
 

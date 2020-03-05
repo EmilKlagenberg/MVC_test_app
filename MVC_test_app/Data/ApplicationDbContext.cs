@@ -24,7 +24,11 @@ namespace MVC_test_app.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=MyDatabase.db");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlite("Filename=MyDatabase.db");
+                base.OnConfiguring(optionsBuilder);
+            }
         }
     }
 }
