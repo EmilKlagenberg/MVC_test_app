@@ -7,6 +7,8 @@ namespace MVC_test_app.Models
 {
     public class TodoViewModel
     {
-        public TodoItem[] Items { get; set; }
+        public TodoItem[] incompleteItems { get; set; }
+
+        public TodoItem[] completeItems { get; set; }
     }
 }

@@ -25,6 +25,13 @@ namespace MVC_test_app.Services
                 .Where(x => x.IsDone == false && x.UserId == user.Id)
                 .ToArrayAsync();
         }
+        public async Task<TodoItem[]> GetCompleteItemAsync(ApplicationUser user)
+        {
+            return await _context.Items
+                .Where(x => x.IsDone == true && x.UserId == user.Id)
+                .ToArrayAsync();
+        }
+
 
         public async Task<bool> AddItemAsync(TodoItem newItem, ApplicationUser user)
         {

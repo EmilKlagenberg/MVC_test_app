@@ -26,12 +26,17 @@ namespace MVC_test_app.Controllers
             var curentUser = await _userManager.GetUserAsync(User);
             if (curentUser == null) return Challenge();
             //Get To-do items from database
-            var items = await _todoItemService
+            var incompleteItems = await _todoItemService
                 .GetIncompleteItemAsync(curentUser);
+
+            var completeItems = await _todoItemService
+                .GetCompleteItemAsync(curentUser);
+
             //Put items into a model
             var model = new TodoViewModel()
             {
-                Items = items
+                incompleteItems = incompleteItems,
+                completeItems = completeItems
             };
             //Render view using the model
             return View(model);

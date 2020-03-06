@@ -11,6 +11,9 @@ namespace MVC_test_app.Services
     {
         Task<TodoItem[]> GetIncompleteItemAsync(ApplicationUser user);
 
+        Task<TodoItem[]> GetCompleteItemAsync(ApplicationUser user);
+
+
         Task<bool> AddItemAsync(TodoItem newItem, ApplicationUser user);
 
         Task<bool> MarkDoneAsync(Guid id, ApplicationUser user);

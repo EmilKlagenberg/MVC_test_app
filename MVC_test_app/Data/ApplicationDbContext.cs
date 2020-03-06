@@ -24,6 +24,7 @@ namespace MVC_test_app.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlite("Filename=MyDatabase.db");
